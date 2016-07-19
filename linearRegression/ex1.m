@@ -1,33 +1,7 @@
-%% Machine Learning Online Class - Exercise 1: Linear Regression
-
-%  Instructions
-%  ------------
-% 
-%  This file contains code that helps you get started on the
-%  linear exercise. You will need to complete the following functions 
-%  in this exericse:
-%
-%     warmUpExercise.m
-%     plotData.m
-%     gradientDescent.m
-%     computeCost.m
-%     gradientDescentMulti.m
-%     computeCostMulti.m
-%     featureNormalize.m
-%     normalEqn.m
-%
-%  For this exercise, you will not need to change any code in this file,
-%  or any other files other than those mentioned above.
-%
-% x refers to the population size in 10,000s
-% y refers to the profit in $10,000s
-%
-
 %% Initialization
 clear ; close all; clc
 
 %% ==================== Part 1: Basic Function ====================
-% Complete warmUpExercise.m 
 fprintf('Running warmUpExercise ... \n');
 fprintf('5x5 Identity Matrix: \n');
 warmUpExercise()
@@ -99,13 +73,13 @@ J_vals = zeros(length(theta0_vals), length(theta1_vals));
 % Fill out J_vals
 for i = 1:length(theta0_vals)
     for j = 1:length(theta1_vals)
-	  t = [theta0_vals(i); theta1_vals(j)];    
+	  t = [theta0_vals(i); theta1_vals(j)];
 	  J_vals(i,j) = computeCost(X, y, t);
     end
 end
 
 
-% Because of the way meshgrids work in the surf command, we need to 
+% Because of the way meshgrids work in the surf command, we need to
 % transpose J_vals before calling surf, or else the axes will be flipped
 J_vals = J_vals';
 % Surface plot
